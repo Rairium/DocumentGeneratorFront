@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div  class="col-md-12 col-xl-12">
+      <div class="card m-b-30">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Title: {{template.title}}</li>
+          <li class="list-group-item">Type of template: {{template.type}}</li>
+          <li class="list-group-item">  <ckeditor [editor]="editor" data="{{template.context}}"></ckeditor>
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <a class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Save" style="color: #FFFFFF">Save</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

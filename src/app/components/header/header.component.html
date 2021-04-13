@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container" id="main-container">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/images/logo150.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="onOpenModal(null, 'add')">Add User <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/template/add">Add Template</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/templates">Templates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8080/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddUser(addForm)">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" ngModel name="username" class="form-control" id="username" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" ngModel name="password" class="form-control" id="password" placeholder="Password" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="Phone" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Image URL</label>
+            <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-user-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!-- jQuery -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!-- Bootstrap -->
+<script type="text/javascript" src="js/jquery.parallax.js"></script><!-- Parallax -->
+<script type="text/javascript" src="js/smoothscroll.js"></script><!-- Smooth Scroll -->
+<script type="text/javascript" src="js/scripts.js"></script><!-- Scripts -->
