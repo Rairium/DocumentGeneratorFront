@@ -5,8 +5,7 @@ import {Router} from '@angular/router';
 import {AlertService} from '../../services/alert.service';
 import {first} from 'rxjs/operators';
 import {TemplateService} from '../../services/template.service';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 @Component({
   selector: 'app-add-template',
@@ -19,12 +18,14 @@ export class AddTemplateComponent implements OnInit {
   private frontUrl = environment.frontUrl;
   loading = false;
   submitted = false;
-  context = ClassicEditor
-    .create(document.querySelector('#editor'), {
-      plugins: [ImageInsert],
-      toolbar: ['insertImage']
-    });
+  context = DecoupledEditor;
 
+  public onReady( editor ) {
+    editor.ui.getEditableElement().parentElement.insertBefore(
+      editor.ui.view.toolbar.element,
+      editor.ui.getEditableElement()
+    );
+  }
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,

@@ -5,8 +5,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Title: {{template.title}}</li>
           <li class="list-group-item">Type of template: {{template.type}}</li>
-          <li class="list-group-item">  <ckeditor [editor]="editor" data="{{template.context}}"></ckeditor>
-          </li>
+          <li class="list-group-item">  <ckeditor [editor]="editor" data="{{template.context}}" (ready)="onReady($event)"></ckeditor></li>
         </ul>
         <div class="card-body">
           <div class="float-right btn-group btn-group-sm">

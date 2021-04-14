@@ -3,7 +3,6 @@ import {Template} from '../../models/template/template';
 import {TemplateService} from '../../services/template.service';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs';
-import * as DocumentEditor from '@ckeditor/ckeditor5-build-classic';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -22,7 +21,6 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class TemplateTableComponent implements OnInit {
   dataSource = new TemplateDataSource(this.templateService);
   displayedColumns = ['id', 'title', 'type'];
-  public editor = DocumentEditor;
   expandedTemplate: Template | null;
 
   constructor(private templateService: TemplateService) {

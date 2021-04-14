@@ -27,7 +27,7 @@
     </div>
     <div class="form-group">
       <label for="context">Context</label>
-      <ckeditor formControlName="context" id="context" [editor]="context" aria-placeholder="create your template"></ckeditor>
+      <ckeditor formControlName="context" id="context" [editor]="context" aria-placeholder="create your template" (ready)="onReady($event)"></ckeditor>
     </div>
     <div class="form-group">
       <button [disabled]="loading" class="btn btn-primary">
